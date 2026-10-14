@@ -9,7 +9,9 @@ These skills require compatible ANKK **v2** MCP tools or CLI commands and user O
 
 ## Installation
 
-After the skills are published to this repository:
+The release candidate `v0.1.0-rc.1` is published. Its remote discovery and project-scoped copy installation were verified with `skills@1.7.2`. This establishes installation, not Production availability or completed business-workflow acceptance.
+
+To discover or install the current repository:
 
 ```sh
 npx skills add Anakonn/ankk-skills --list
@@ -18,13 +20,13 @@ npx skills add Anakonn/ankk-skills --skill ankk-analyze --skill ankk-publish
 
 Choose the target agent and project/global scope in the installer. Local development discovery uses `npx skills add ./ --list` from this repository. See the [official skills CLI](https://github.com/vercel-labs/skills) for options.
 
-Releases use semantic Git tags. Once a release exists, replace `RELEASE_TAG` with that exact published tag:
+Releases use semantic Git tags. To install the verified release candidate:
 
 ```sh
-npx skills add https://github.com/Anakonn/ankk-skills/tree/RELEASE_TAG --skill ankk-analyze --skill ankk-publish
+npx skills add https://github.com/Anakonn/ankk-skills/tree/v0.1.0-rc.1 --skill ankk-analyze --skill ankk-publish
 ```
 
-Do not use `owner/repo@tag` as an assumed Git-ref syntax: some source forms interpret the suffix as a skill name. Tag installation must be verified against the selected released ref. No release tag has been created by this local implementation.
+Do not use `owner/repo@tag` as an assumed Git-ref syntax: some source forms interpret the suffix as a skill name. Tag installation must be verified against the selected released ref. Published tags are immutable; later changes require a new release.
 
 ## Compatibility and releases
 
