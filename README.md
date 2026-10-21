@@ -30,7 +30,7 @@ Do not use `owner/repo@tag` as an assumed Git-ref syntax: some source forms inte
 
 ## Compatibility and releases
 
-Local stage-3 candidate changes add connection-prerequisite recovery to publishing and optional stored comment/DM evidence to analysis. These changes are unreleased. They require the deployed interface to expose the relevant capability and do not make connection changes, billing, replies or moderation part of an ordinary publishing or analysis approval. The published tag above remains unchanged.
+ANKK CLI 0.6.0 is published. Its public package installation, upgrade, OAuth login/logout and representative reads have been verified. The next Skills release, `v0.1.0`, is being prepared for this CLI and compatible v2 MCP tools. It adds connection-prerequisite guidance to publishing and optional stored comment/DM evidence to analysis. These Skill changes are not yet included in the published `v0.1.0-rc.1` tag. Actual capabilities depend on the deployed environment and your existing permissions. Connection changes, billing, replies and moderation require their own explicit approval.
 
 Both skills target the public v2 business contract. Use current MCP input schemas or installed CLI help for parameters. `ankk-publish` needs media preparation, content publication and operation lookup; retries additionally require `contents_retry`. `ankk-analyze` needs brand/connection reads and analytics, with posts reads for supporting detail. UI cards are optional; structured results remain usable.
 
