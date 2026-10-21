@@ -11,9 +11,16 @@ Honor the user's chosen interface. Otherwise use authenticated ANKK MCP, then au
 
 - Resolve environment, accessible brand and SNS account IDs from current reads. Pass brand explicitly. A connection ID, ANKK SNS account ID and external provider account ID are different identifiers. Read account capabilities and reconnect requirements; do not infer eligibility from a name or old card.
 - Inspect current MCP schemas or CLI help for v2 support. Relevant tools are `connections_list`, `connections_get`, `media_get`, `contents_publish`, `operations_get` and `contents_retry`; use their declared inputs, not a copied historical schema.
+- When current TikTok interaction controls or video duration limits are needed and the installed interface supports it, use `publishing_options` / `ankk publishing options SNS_CONNECTION_ID` with the explicit brand and environment. This is a live provider call that consumes quota, so keep it within the task's authorized scope and avoid duplicate checks across interfaces. Other providers are unsupported by this operation. A successful result describes current settings; it does not authorize publication or guarantee a later result. If the tool is absent, do not invent it or present an unreleased CLI command as installed support.
 - Confirm target accounts, complete text/ordered thread segments, media, provider settings and immediate versus scheduled execution. Reuse existing user approval for that exact intent. Ask only for missing intent or changed material details; a skill invocation or a draft request alone does not approve publication.
 - Convert a specified local time to UTC. Resolve ambiguous timezone/date before scheduling; show the interpretation. Keep the schedule explicit (`scheduled_at: null` means immediate).
 - Prepare media separately. Use the current upload-start, file-transfer, completion and status contract; publish only with ready media IDs from the same brand. Do not expose signed upload URLs. Expired upload URLs do not justify creating duplicate media; use the defined reissue path. Different bytes require a new upload. A completed transfer is not proof of inspection readiness.
+
+## Resolve connection prerequisites when needed
+
+If current connection reads require reauthorization, use the installed interface's declared connection workflow only when available and authorized for this task. A browser progress URL means the browser step is ready, not that the SNS connection is usable. Retain the operation ID, wait for its confirmed result, then reread the selected connection and capabilities before returning to the original publication intent. Renewing a progress URL must not create a second connection operation.
+
+Connection setup cannot increase paid account capacity. If the requested connection operation is rejected for capacity, report that prerequisite; do not assume that zero spare slots alone forbids reauthorizing an existing account. Publishing intent does not authorize checkout, a quantity increase, an account transfer or disconnect. Do not resolve a missing capability by switching brands, providers or accounts without the user's intent.
 
 ## Submit and follow through
 

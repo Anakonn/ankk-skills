@@ -30,6 +30,8 @@ Do not use `owner/repo@tag` as an assumed Git-ref syntax: some source forms inte
 
 ## Compatibility and releases
 
+ANKK CLI 0.6.0 is published. Its public package installation, upgrade, OAuth login/logout and representative reads have been verified. The next Skills release, `v0.1.0`, is being prepared for this CLI and compatible v2 MCP tools. It adds connection-prerequisite guidance to publishing and optional stored comment/DM evidence to analysis. These Skill changes are not yet included in the published `v0.1.0-rc.1` tag. Actual capabilities depend on the deployed environment and your existing permissions. Connection changes, billing, replies and moderation require their own explicit approval.
+
 Both skills target the public v2 business contract. Use current MCP input schemas or installed CLI help for parameters. `ankk-publish` needs media preparation, content publication and operation lookup; retries additionally require `contents_retry`. `ankk-analyze` needs brand/connection reads and analytics, with posts reads for supporting detail. UI cards are optional; structured results remain usable.
 
 Before tagging a release, validate both skills, exercise realistic approval/uncertainty and missing-data scenarios, and verify discovery and installation with the official installer in an isolated directory. Record the tested installer/CLI versions and supported capabilities. Commit/push, tag publication and external distribution require repository-owner approval. A successful installation does not establish successful OAuth or business execution.
