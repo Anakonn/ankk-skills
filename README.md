@@ -30,6 +30,8 @@ Do not use `owner/repo@tag` as an assumed Git-ref syntax: some source forms inte
 
 ## Compatibility and releases
 
+Local stage-3 candidate changes add connection-prerequisite recovery to publishing and optional stored comment/DM evidence to analysis. These changes are unreleased. They require the deployed interface to expose the relevant capability and do not make connection changes, billing, replies or moderation part of an ordinary publishing or analysis approval. The published tag above remains unchanged.
+
 Both skills target the public v2 business contract. Use current MCP input schemas or installed CLI help for parameters. `ankk-publish` needs media preparation, content publication and operation lookup; retries additionally require `contents_retry`. `ankk-analyze` needs brand/connection reads and analytics, with posts reads for supporting detail. UI cards are optional; structured results remain usable.
 
 Before tagging a release, validate both skills, exercise realistic approval/uncertainty and missing-data scenarios, and verify discovery and installation with the official installer in an isolated directory. Record the tested installer/CLI versions and supported capabilities. Commit/push, tag publication and external distribution require repository-owner approval. A successful installation does not establish successful OAuth or business execution.
