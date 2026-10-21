@@ -9,7 +9,7 @@ These skills require compatible ANKK **v2** MCP tools or CLI commands and user O
 
 ## Installation
 
-The release candidate `v0.1.0-rc.1` is published. Its remote discovery and project-scoped copy installation were verified with `skills@1.7.2`. This establishes installation, not Production availability or completed business-workflow acceptance.
+The stable release `v0.1.0` is published. Its remote discovery and project-scoped copy installation were verified with `skills@1.7.2`, and both installed Skill files match the tagged source. Installation does not establish OAuth or business-workflow success.
 
 To discover or install the current repository:
 
@@ -20,17 +20,17 @@ npx skills add Anakonn/ankk-skills --skill ankk-analyze --skill ankk-publish
 
 Choose the target agent and project/global scope in the installer. Local development discovery uses `npx skills add ./ --list` from this repository. See the [official skills CLI](https://github.com/vercel-labs/skills) for options.
 
-Releases use semantic Git tags. To install the verified release candidate:
+Releases use semantic Git tags. To install the verified stable release:
 
 ```sh
-npx skills add https://github.com/Anakonn/ankk-skills/tree/v0.1.0-rc.1 --skill ankk-analyze --skill ankk-publish
+npx skills add https://github.com/Anakonn/ankk-skills/tree/v0.1.0 --skill ankk-analyze --skill ankk-publish
 ```
 
 Do not use `owner/repo@tag` as an assumed Git-ref syntax: some source forms interpret the suffix as a skill name. Tag installation must be verified against the selected released ref. Published tags are immutable; later changes require a new release.
 
 ## Compatibility and releases
 
-ANKK CLI 0.6.0 is published. Its public package installation, upgrade, OAuth login/logout and representative reads have been verified. The next Skills release, `v0.1.0`, is being prepared for this CLI and compatible v2 MCP tools. It adds connection-prerequisite guidance to publishing and optional stored comment/DM evidence to analysis. These Skill changes are not yet included in the published `v0.1.0-rc.1` tag. Actual capabilities depend on the deployed environment and your existing permissions. Connection changes, billing, replies and moderation require their own explicit approval.
+ANKK CLI 0.6.0 is published. Its public package installation, upgrade, OAuth login/logout and representative reads have been verified. Skills `v0.1.0` supports this CLI and compatible v2 MCP tools. It includes connection-prerequisite guidance for publishing and optional stored comment/DM evidence to analysis. The earlier `v0.1.0-rc.1` tag remains available but does not include these changes. Actual capabilities depend on the deployed environment and your existing permissions. Connection changes, billing, replies and moderation require their own explicit approval.
 
 Both skills target the public v2 business contract. Use current MCP input schemas or installed CLI help for parameters. `ankk-publish` needs media preparation, content publication and operation lookup; retries additionally require `contents_retry`. `ankk-analyze` needs brand/connection reads and analytics, with posts reads for supporting detail. UI cards are optional; structured results remain usable.
 
